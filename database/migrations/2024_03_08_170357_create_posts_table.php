@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId("user_id");
-            
             $table->text("title");
+            $table->enum("status", [
+                "archived",
+                "published",
+                "draft"
+            ]);
         
             $table->timestamps();
         });
